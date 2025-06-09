@@ -1,0 +1,149 @@
+{
+	"id": "Inkweaver",
+	"name": "The Inkweaver",
+	"description": "An in-development campaign for my OC, Inkweaver.<LINE>This is currently in development and likely won't get finished.",
+	"features": {
+		"color": "101549",
+		"auto_grab_batflies": true,
+		"weight": 1.0,
+		"tunnel_speed": 1.1,
+		"climb_speed": 1.2,
+		"walk_speed": 1.2,
+		"crouch_stealth": 1.2,
+		"throw_skill": 2,
+		"lung_capacity": [
+			1,
+			0.8
+		],
+		"loudness": 1.1,
+		"alignments": {
+			"Scavengers": {
+				"like": 0.8,
+				"locked": false
+			}
+		},
+		"diet": {
+			"corpses": 0.5,
+			"meat": 1.0,
+			"plants": 1.0,
+			"overrides": {
+				"Scavenger": -1
+			}
+		},
+		"custom_colors": [
+			{
+				"name": "Body",
+				"story": "101549"
+			},
+			{
+				"name": "Eyes",
+				"story": "000000"
+			}
+		],
+		"back_spear": true,
+		"can_maul": true,
+		"maul_blacklist": [
+			"Scavenger"
+		],
+		"maul_damage": 1.0,
+		"karma": 2,
+		"karma_cap": 3,
+		"the_mark": false,
+		"the_glow": true,
+		"start_room": [
+			"LC_B04"
+		],
+		"start_position": {
+			"LC_B04": [
+				63,
+				22
+			]
+		},
+		"intro_cutscene": {
+			"LC_B04": {
+				"player_grasps": {
+					"AbstractDataPearl": {
+						"type": "DataPearl",
+						"dataPearlType": "misc2"
+					},
+					"AbstractSpear": {
+						"electric": true,
+						"electricCharge": 0
+					}
+				},
+				"inputs": [
+					{
+						"time": 80,
+						"x": -1,
+						"y": 1
+					},
+					{
+						"time": 212,
+						"x": -1,
+						"y": 0
+					},
+					{
+						"time": 8,
+						"x": -1,
+						"y": 1
+					},
+					{
+						"time": 45,
+						"x": -1,
+						"y": 0
+					},
+					{
+						"time": 100,
+						"x": 0,
+						"y": 0
+					}
+				],
+				"food": 4
+			}
+		},
+		"has_dreams": false,
+		"cycle_length_min": 6.75,
+		"cycle_length_max": 13.25,
+		"perma_unlock_gates": false,
+		"food_min": 5,
+		"food_max": 8,
+		"select_menu_scene": "slugcat - inkweaver",
+		"select_menu_scene_ascended": "Ghost_Inkweaver",
+		"sleep_scene": "Sleep_Inkweaver",
+		"starve_scene": "Starve_Inkweaver",
+		"death_scene": "Death_Inkweaver",
+		"world_state": [
+			"InkweaverTimeline",
+			"Artificer"
+		],
+		"expedition_enabled": false,
+		"expedition_description": "I'm not sure if this would even work, so I have disabled this.<LINE>How did you even select this?",
+		"guide_overseer": 1,
+		"guide_region_priority": [
+			"OE"
+		],
+		"craft": [
+			{
+				"can_craft_single": true,
+				"craft_items": [
+					{
+						"type": "Spear",
+						"data": 0
+					}
+				],
+				"craft_cost": 3,
+				"craft_result": {
+					"type": "Spear",
+					"data": 2
+				}
+			}
+		],
+		"spawn_karma_flowers": true,
+		"can_pass_OE_gate": [
+			true,
+			true
+		],
+		"can_access_whitetokens": true,
+		"take_spears_from_wall": false
+	}
+}
