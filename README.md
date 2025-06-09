@@ -7,11 +7,11 @@ This mod includes a new slugcat named Inkweaver, my primary and only slugcat OC.
 - He currently has a build-in DMS skin that uses Auto's Curated Slugcats as a base
 - He starts by leaving LC
 - There are two "ending checkpoints" to reach before getting one of the two story endings, not counting the ascension ending:
-    -- First when you reach OE by using your Citizen ID Drone to force-open the gate
-    -- Second when you get back to LC, also by force-reopening the gate
+    - First when you reach OE by using your Citizen ID Drone to force-open the gate
+    - Second when you get back to LC, also by force-reopening the gate
 - After reaching both of these points in order, you can now go back to the Chieftain to find Artificer just arriving to kill him (I'm not very sure how complicated this would be). There are now two outcomes that lead to their own story endings:
-    -- Chieftain dies, leading the the "resentment" ending
-    -- Artificer dies, leading to the "migration" ending (You found a new place to live in OE, yippee, now everyone has to move there o.o)
+    - Chieftain dies, leading the the "resentment" ending
+    - Artificer dies, leading to the "migration" ending (You found a new place to live in OE, yippee, now everyone has to move there o.o)
 
 This mod is currently going to stay extremely unfinished, as I don't know how to code C#. But here's a general TODO in no particular order:
 
