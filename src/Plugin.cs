@@ -2,10 +2,12 @@
 using SlugBase.Features;
 using UnityEngine;
 using static SlugBase.Features.FeatureTypes;
+using MoreSlugcats;
+using System.Runtime.CompilerServices;
 
 namespace SlugTemplate
 {
-    [BepInPlugin(MOD_ID, "Inkweaver Scug", "0.1.0")]
+    [BepInPlugin(MOD_ID, "Inkweaver Scug", "0.1.1")]
     class Plugin : BaseUnityPlugin
     {
         private const string MOD_ID = "darkninja.inkweaver";
@@ -35,14 +37,15 @@ namespace SlugTemplate
         // Implement StartWithRobo
         private void Set_Robo(On.Player.orig_ctor orig, Player self, AbstractCreature abstractCreature, World world)
         {
-            if (orig != null)
+            orig(self, abstractCreature, world);
+            if (self.room.game.IsStorySession)
             {
-                if (self.room.game.IsStorySession)
+                if ((self.room.game.session as StoryGameSession).saveState.hasRobo != true)
                 {
-                    if ((self.room.game.session as StoryGameSession).saveState.hasRobo != true)
-                    {
-                        (self.room.game.session as StoryGameSession).saveState.hasRobo = true;
-                    }
+                    var bot = new AncientBot(new Vector2(470f, 1790f), new Color(1f, 0f, 0f), null, false);
+                    self.room.AddObject(bot);
+                    (self.room.game.session as StoryGameSession).saveState.hasRobo = true;
+                    self.myRobot = bot;
                 }
             }
         }

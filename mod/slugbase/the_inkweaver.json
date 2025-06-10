@@ -3,6 +3,7 @@
 	"name": "The Inkweaver",
 	"description": "An in-development campaign for my OC, Inkweaver.<LINE>This is currently in development and likely won't get finished.",
 	"features": {
+		"inkweaver/start_with_robo" : true,
 		"color": "101549",
 		"auto_grab_batflies": true,
 		"weight": 1.0,
