@@ -1,7 +1,6 @@
-﻿using System;
-using BepInEx;
-using UnityEngine;
+﻿using BepInEx;
 using SlugBase.Features;
+using UnityEngine;
 using static SlugBase.Features.FeatureTypes;
 
 namespace SlugTemplate
@@ -14,6 +13,7 @@ namespace SlugTemplate
         public static readonly PlayerFeature<float> SuperJump = PlayerFloat("inkweaver/super_jump");
         public static readonly PlayerFeature<bool> ExplodeOnDeath = PlayerBool("inkweaver/explode_on_death");
         public static readonly GameFeature<float> MeanLizards = GameFloat("inkweaver/mean_lizards");
+        public static readonly PlayerFeature<bool> StartWithRobo = PlayerBool("inkweaver/start_with_robo");
 
 
         // Add hooks
@@ -25,11 +25,26 @@ namespace SlugTemplate
             On.Player.Jump += Player_Jump;
             On.Player.Die += Player_Die;
             On.Lizard.ctor += Lizard_ctor;
+            On.Player.ctor += Set_Robo;
         }
-        
+
+
         // Load any resources, such as sprites or sounds
-        private void LoadResources(RainWorld rainWorld)
+        private void LoadResources(RainWorld rainWorld) { }
+
+        // Implement StartWithRobo
+        private void Set_Robo(On.Player.orig_ctor orig, Player self, AbstractCreature abstractCreature, World world)
         {
+            if (orig != null)
+            {
+                if (self.room.game.IsStorySession)
+                {
+                    if ((self.room.game.session as StoryGameSession).saveState.hasRobo != true)
+                    {
+                        (self.room.game.session as StoryGameSession).saveState.hasRobo = true;
+                    }
+                }
+            }
         }
 
         // Implement MeanLizards
@@ -37,7 +52,7 @@ namespace SlugTemplate
         {
             orig(self, abstractCreature, world);
 
-            if(MeanLizards.TryGet(world.game, out float meanness))
+            if (MeanLizards.TryGet(world.game, out float meanness))
             {
                 self.spawnDataEvil = Mathf.Min(self.spawnDataEvil, meanness);
             }
@@ -62,7 +77,7 @@ namespace SlugTemplate
 
             orig(self);
 
-            if(!wasDead && self.dead
+            if (!wasDead && self.dead
                 && ExplodeOnDeath.TryGet(self, out bool explode)
                 && explode)
             {
