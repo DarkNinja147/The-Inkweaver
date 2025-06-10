@@ -42,10 +42,12 @@ namespace SlugTemplate
             {
                 if ((self.room.game.session as StoryGameSession).saveState.hasRobo != true)
                 {
-                    var bot = new AncientBot(new Vector2(470f, 1790f), new Color(1f, 0f, 0f), null, false);
-                    self.room.AddObject(bot);
-                    (self.room.game.session as StoryGameSession).saveState.hasRobo = true;
-                    self.myRobot = bot;
+                    if (StartWithRobo.TryGet(self, out bool robo) && robo)
+                    {
+                        self.myRobot = new AncientBot(new Vector2(500f, 0f), new Color(0.2f, 0f, 1f), self, true);
+                        self.room.AddObject(self.myRobot);
+                        (self.room.game.session as StoryGameSession).saveState.hasRobo = true;
+                    }
                 }
             }
         }
