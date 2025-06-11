@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using MoreSlugcats;
 using SlugBase.Features;
+using System;
 using UnityEngine;
 using static SlugBase.Features.FeatureTypes;
 
@@ -32,17 +33,24 @@ namespace Inkweaver
         private void Save_On_Start(On.Player.orig_ctor orig, Player self, AbstractCreature abstractCreature, World world)
         {
             orig(self, abstractCreature, world);
-            if (SaveOnStart.TryGet(self, out bool save) && save)
+            try
             {
-                if (SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool saved) && !saved)
+                if (SaveOnStart.TryGet(self, out bool save) && save)
                 {
-                    if (self.room.roomSettings.name.ToUpper() == "UW_A12")
+                    if (SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool saved) && !saved)
                     {
-                        (self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData.SaveToString(false, false);
-                        SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).Set<bool>("hasSavedOnWall", true);
-                        //SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(savedata).Set<DeathPersistentSaveData>("savedata", savedata);
+                        if (self.room.roomSettings.name.ToUpper() == "UW_A12")
+                        {
+                            Logger.Log(BepInEx.Logging.LogLevel.Debug, "Attempting to save..");
+                            Logger.Log(BepInEx.Logging.LogLevel.Debug, (self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData.SaveToString(false, false).ToString());
+                            SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).Set<bool>("hasSavedOnWall",true);
+                            //RainWorldGame.ForceSaveNewDenLocation(self.room.game, "UW_A12", true);
+                            //SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(savedata).Set<DeathPersistentSaveData>("savedata", savedata);
+                        }
                     }
                 }
+            } catch (Exception exception) {
+                Logger.Log(BepInEx.Logging.LogLevel.Error, exception.Message);
             }
         }
 
@@ -55,11 +63,10 @@ namespace Inkweaver
                 if (self.room.game.IsStorySession)
                 {
                     self.myRobot = new AncientBot(new Vector2(470f, 1790f), new Color(0.2f, 0f, 1f), self, true);
+                    self.room.AddObject(self.myRobot);
                     if ((self.room.game.session as StoryGameSession).saveState.hasRobo != true)
                     {
-                        self.room.AddObject(self.myRobot);
                         (self.room.game.session as StoryGameSession).saveState.hasRobo = true;
-                        //RainWorldGame.ForceSaveNewDenLocation(self.room.game, "UW_A12", true);
                     }
                 }
             }
