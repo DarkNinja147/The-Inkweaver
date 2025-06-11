@@ -39,7 +39,7 @@ namespace Inkweaver
                     if (self.room.roomSettings.name.ToUpper() == "UW_A12")
                     {
                         (self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData.SaveToString(false, false);
-                        SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).Set<bool>("hasSavedOnWall",true);
+                        SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).Set<bool>("hasSavedOnWall", true);
                         //SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(savedata).Set<DeathPersistentSaveData>("savedata", savedata);
                     }
                 }
