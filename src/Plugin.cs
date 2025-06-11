@@ -54,7 +54,7 @@ namespace Inkweaver
             {
                 if (self.room.game.IsStorySession)
                 {
-                        self.myRobot = new AncientBot(new Vector2(470f, 1790f), new Color(0.2f, 0f, 1f), self, true);
+                    self.myRobot = new AncientBot(new Vector2(470f, 1790f), new Color(0.2f, 0f, 1f), self, true);
                     if ((self.room.game.session as StoryGameSession).saveState.hasRobo != true)
                     {
                         self.room.AddObject(self.myRobot);
