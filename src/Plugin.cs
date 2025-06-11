@@ -1,9 +1,10 @@
 ﻿using BepInEx;
+using JetBrains.Annotations;
+using MoreSlugcats;
 using SlugBase.Features;
+using SlugBase.SaveData;
 using UnityEngine;
 using static SlugBase.Features.FeatureTypes;
-using MoreSlugcats;
-using System.Runtime.CompilerServices;
 
 namespace SlugTemplate
 {
@@ -16,7 +17,7 @@ namespace SlugTemplate
         public static readonly PlayerFeature<bool> ExplodeOnDeath = PlayerBool("inkweaver/explode_on_death");
         public static readonly GameFeature<float> MeanLizards = GameFloat("inkweaver/mean_lizards");
         public static readonly PlayerFeature<bool> StartWithRobo = PlayerBool("inkweaver/start_with_robo");
-
+        public static readonly PlayerFeature<bool> SaveOnStart = PlayerBool("inkweaver/save_on_start");
 
         // Add hooks
         public void OnEnable()
@@ -28,21 +29,41 @@ namespace SlugTemplate
             On.Player.Die += Player_Die;
             On.Lizard.ctor += Lizard_ctor;
             On.Player.ctor += Set_Robo;
+            //On.Player.ctor += Save_On_Start;
         }
+
 
 
         // Load any resources, such as sprites or sounds
         private void LoadResources(RainWorld rainWorld) { }
 
+        /*// Implement SaveOnStart
+        private void Save_On_Start(On.Player.orig_ctor orig, Player self, AbstractCreature abstractCreature, World world)
+        {
+            orig(self, abstractCreature, world);
+            if (SaveOnStart.TryGet(self, out bool save) && save)
+            {
+                if (SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool saved) && saved)
+                {
+                    if (self.room.roomSettings.name == "UW_A12")
+                    {
+                        (self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData.SaveToString(false, false);
+                        SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).Set<bool>("hasSavedOnWall",true);
+                        //SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(savedata).Set<DeathPersistentSaveData>("savedata", savedata);
+                    }
+                }
+            }
+        }*/
+
         // Implement StartWithRobo
         private void Set_Robo(On.Player.orig_ctor orig, Player self, AbstractCreature abstractCreature, World world)
         {
-            orig(self, abstractCreature, world);
-            if (self.room.game.IsStorySession)
+            if (StartWithRobo.TryGet(self, out bool robo) && robo)
             {
-                if ((self.room.game.session as StoryGameSession).saveState.hasRobo != true)
+                orig(self, abstractCreature, world);
+                if (self.room.game.IsStorySession)
                 {
-                    if (StartWithRobo.TryGet(self, out bool robo) && robo)
+                    if ((self.room.game.session as StoryGameSession).saveState.hasRobo != true)
                     {
                         self.myRobot = new AncientBot(new Vector2(500f, 0f), new Color(0.2f, 0f, 1f), self, true);
                         self.room.AddObject(self.myRobot);
