@@ -48,10 +48,10 @@ namespace Inkweaver
                             //Logger.Log(BepInEx.Logging.LogLevel.Info, "Attempting to load the next statement.");
                             if (newRoom.roomSettings.name.ToUpper() == "UW_A12")
                             {
-                                Logger.Log(BepInEx.Logging.LogLevel.Info, "Attempting to save..");
+                                Logger.Log(BepInEx.Logging.LogLevel.Info, "Reached save point.");
                                 Logger.Log(BepInEx.Logging.LogLevel.Info, newRoom.game.GetStorySession.saveState.deathPersistentSaveData.SaveToString(false, false));
                                 //newRoom.game.GetStorySession.saveState.deathPersistentSaveData.AddDeathPosition(newRoom, new Vector2(1f, 1f));
-                                //RainWorldGame.ForceSaveNewDenLocation(newRoom.game, "UW_A12", true);
+                                //RainWorldGame.ForceSaveNewDenLocation(newRoom.game, "GATE_UW_LC", true);
                                 SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).Set<bool>("hasSavedOnWall", true);
                             }
                         }
