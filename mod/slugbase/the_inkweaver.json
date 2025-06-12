@@ -4,7 +4,8 @@
 	"description": "An in-development campaign for my OC, Inkweaver.<LINE>This is currently in development and likely won't get finished.",
 	"features": {
 		"inkweaver/is_inkweaver" : true,
-		"inkweaver/NewRoom" : true,
+		"inkweaver/NewRoom_save" : true,
+		"inkweaver/NewRoom_robo" : true,
 		"inkweaver/ctor": true,
 		"color": "101549",
 		"auto_grab_batflies": true,

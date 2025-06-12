@@ -12,7 +12,8 @@ namespace Inkweaver
     {
         private const string MOD_ID = "darkninja.inkweaver";
 
-        public static readonly PlayerFeature<bool> NewRoom = PlayerBool("inkweaver/NewRoom");
+        public static readonly PlayerFeature<bool> NewRoom_save = PlayerBool("inkweaver/NewRoom_save");
+        public static readonly PlayerFeature<bool> NewRoom_robo = PlayerBool("inkweaver/NewRoom_robo");
         public static readonly PlayerFeature<bool> ctor = PlayerBool("inkweaver/ctor");
         public static readonly PlayerFeature<bool> IsInkweaver = PlayerBool("inkweaver/is_inkweaver");
 
@@ -38,31 +39,32 @@ namespace Inkweaver
             {
                 if (IsInkweaver.TryGet(self, out bool isInkweaver) && isInkweaver)
                 {
-                    if (NewRoom.TryGet(self, out bool save) && save)
+                    if (NewRoom_save.TryGet(self, out bool save) && save)
                     {
-                        //Logger.Log(BepInEx.Logging.LogLevel.Info, "SaveOnStart is "+ SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool sav1) + sav1);
-                        //Logger.Log(BepInEx.Logging.LogLevel.Info, "hasSavedOnWall is "+ SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool sav2).ToString());
-                        if (!SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool saved) || saved == false)
+                        //Logger.Log(BepInEx.Logging.LogLevel.Info, "SaveOnStart is "+ SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool sav1) + sav1);
+                        //Logger.Log(BepInEx.Logging.LogLevel.Info, "hasSavedOnWall is "+ SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool sav2).ToString());
+                        if (!SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool saved) || saved == false)
                         {
                             //Logger.Log(BepInEx.Logging.LogLevel.Info, "Attempting to load the next statement.");
                             if (newRoom.roomSettings.name.ToUpper() == "UW_A12")
                             {
                                 Logger.Log(BepInEx.Logging.LogLevel.Info, "Attempting to save..");
-                                Logger.Log(BepInEx.Logging.LogLevel.Info, (self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData.SaveToString(false, false).ToString());
-                                SlugBase.SaveData.SaveDataExtension.GetSlugBaseData((self.room.game.session as StoryGameSession).saveState.deathPersistentSaveData).Set<bool>("hasSavedOnWall", true);
-                                RainWorldGame.ForceSaveNewDenLocation(self.room.game, "UW_A12", true);
+                                Logger.Log(BepInEx.Logging.LogLevel.Info, newRoom.game.GetStorySession.saveState.deathPersistentSaveData.SaveToString(false, false));
+                                //newRoom.game.GetStorySession.saveState.deathPersistentSaveData.AddDeathPosition(newRoom, new Vector2(1f, 1f));
+                                //RainWorldGame.ForceSaveNewDenLocation(newRoom.game, "UW_A12", true);
+                                SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).Set<bool>("hasSavedOnWall", true);
                             }
                         }
                     }
-                    if (NewRoom.TryGet(self, out bool robo) && robo)
+                    if (NewRoom_robo.TryGet(self, out bool robo) && robo)
                     {
-                        if (self.room.game.IsStorySession)
+                        if (newRoom.game.IsStorySession)
                         {
-                            self.myRobot = new AncientBot(new Vector2(470f, 1790f), new Color(0.2f, 0f, 1f), self, true);
-                            self.room.AddObject(self.myRobot);
-                            if ((self.room.game.session as StoryGameSession).saveState.hasRobo != true)
+                            self.myRobot = new AncientBot(new Vector2(0f, 0f), new Color(0.2f, 0f, 1f), self, true);
+                            newRoom.AddObject(self.myRobot);
+                            if (newRoom.game.GetStorySession.saveState.hasRobo != true)
                             {
-                                (self.room.game.session as StoryGameSession).saveState.hasRobo = true;
+                                newRoom.game.GetStorySession.saveState.hasRobo = true;
                             }
                         }
                     }
@@ -76,7 +78,6 @@ namespace Inkweaver
         private void Inkweaver_ctor(On.Player.orig_ctor orig, Player self, AbstractCreature abstractCreature, World world)
         {
             orig(self, abstractCreature, world);
-            throw new NotImplementedException();
         }
     }
 }
