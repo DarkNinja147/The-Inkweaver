@@ -1,7 +1,7 @@
 ﻿{
 	"id": "darkninja.inkweaver",
 	"name": "Inkweaver Scug",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"authors": "DarkNinja",
 	"description": "A new slugcat, raised by scavengers, must find a new home for his colony.\nPerhaps you know a suitable place?",
 	"requirements": [ "slime-cubed.slugbase", "customslugcatutils", "moreslugcats", "magica.extendedslugbasefeatures" ],
