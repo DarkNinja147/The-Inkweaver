@@ -23,4 +23,4 @@ This mod is currently going to stay extremely unfinished, as I don't know how to
 - Cutscenes? Maybe?
 - Figure out a way to force-save after exiting GATE_UW_LC at the start of campaign so as to avoid the bug with the echo on top of the Wall
 
-The work that explains what his lore was meant to be is here: https://archiveofourown.org/works/65963092\
+The work that explains what his lore was meant to be is here: https://archiveofourown.org/works/65963092
