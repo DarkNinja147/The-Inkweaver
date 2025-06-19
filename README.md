@@ -13,6 +13,7 @@ This mod includes a slugcat named Inkweaver, my primary and only slugcat OC. Uni
 -  After reaching both of these points in order, you can now go back to the Chieftain to find Artificer just arriving to kill him (I'm not very sure how complicated this would be). There are now two outcomes that lead to their own story endings:
     - Chieftain dies, leading to the "resentment" ending
     - Artificer dies, leading to the "migration" ending (You found a new place to live in Outer Expanse, yippee, now everyone has to move there o.o)
+
 This mod is currently going to stay extremely unfinished, as I don't know how to code C#. But here's a general TODO in no particular order:
 - Get art (no menu/sleep/death/starve/icons currently. I can't make art worth a single penny, nor can I buy art at the current point in time)
 - Create mask item
