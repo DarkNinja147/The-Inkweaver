@@ -50,8 +50,8 @@
 			"Scavenger"
 		],
 		"maul_damage": 1.0,
-		"karma": 2,
-		"karma_cap": 3,
+		"karma": 4,
+		"karma_cap": 4,
 		"the_mark": false,
 		"the_glow": true,
 		"start_room": [
