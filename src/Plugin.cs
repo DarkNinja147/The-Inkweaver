@@ -62,10 +62,7 @@ namespace Inkweaver
                         if (newRoom.game.IsStorySession)
                         {
                             var inkweaverAncientBot = new AncientBot(new Vector2(0f, 0f), new Color(0.2f, 0f, 1f), self, true);
-                            if (self.myRobot?.Equals(inkweaverAncientBot) == false)
-                            {
-                                self.myRobot = inkweaverAncientBot;
-                            }
+                            self.myRobot = inkweaverAncientBot;
                             if (SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).TryGet<string>("currentlyLoadedRoom", out string loaded) && loaded != newRoom.roomSettings.name)
                             {
                                 self.room.AddObject(self.myRobot);
