@@ -7,7 +7,7 @@ using static SlugBase.Features.FeatureTypes;
 
 namespace Inkweaver
 {
-    [BepInPlugin(MOD_ID, "Inkweaver Scug", "0.1.3")]
+    [BepInPlugin(MOD_ID, "Inkweaver Scug", "0.2.0")]
     class Plugin : BaseUnityPlugin
     {
         private const string MOD_ID = "darkninja.inkweaver";
