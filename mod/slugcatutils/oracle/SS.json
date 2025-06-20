@@ -1,0 +1,27 @@
+{
+    "Slugcat": "Inkweaver",
+    "Oracle": "SS",
+    "Behaviors": [
+        {
+            "EnterTimes": 0,
+            "Events": [
+                {
+                    "Name": "SSChatLog",
+                    "Loop": false,
+                    "Random": false
+                },
+                {
+                    "Name": "ThrowOut_Polite_ThrowOut"
+                }
+            ]
+        },
+        {
+            "EnterTimes": 1,
+            "Events": [
+                {
+                    "Name": "Pebbles_SlumberParty"
+                }
+            ]
+        }
+    ]
+}

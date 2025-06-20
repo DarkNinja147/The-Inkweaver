@@ -1,0 +1,39 @@
+SP|turnoff
+SP|gravity|1
+SP|locked
+SP|work|0
+SP|behavior|Investigate
+. . .
+WAIT|160
+SP|behavior|KeepDistance
+SP|behavior|Talk
+You already have the Mark.
+Interesting.|100|100
+. . .|40|20
+Your existence with the scavengers on my city has been incessantly brought<LINE>to my attention by my overseers, thanks to the device that follows you.
+It is the citizen ID drone of one of my long departed creators.<LINE>Despite all odds, it seems to have been very well taken care of, even after all this time.
+I assume you have something to do with it, seeing as you now carry<LINE>that drone with you and it seems to be working just fine.
+. . .|40
+Little creature. You're stuck in a cycle, a repeating pattern. You want a way out.
+Oh, stop meowing. I'm trying to give you the very instructions<LINE>that I was created to give to creatures like you.
+As I was saying... Go west. Past the Farm Arrays. Where the land fissures, go down deep into the-|0|0
+SHUT UP!<LINE>That drone of yours restrains me from doing any harm to your small and fragile body,<LINE>but my patience is wearing very thin, and I WILL make you leave if you do not let me speak.|0
+SP|gravity|0
+Are you that impatient? Do you really not wish to end the cycle for yourself?
+SP|behavior|Investigate
+. . .
+SP|gravity|1
+Fine.
+SP|behavior|KeepDistance
+SP|behavior|Talk
+. . .
+Maybe while you waste your life on this mortal plane, you can convince<LINE>your tribe of scavangers to leave the city atop my superstructure for good.
+That way, my shell can stop being pulled apart from the outside by your grubby<LINE>paws; I'm already having a hard enough time with my own infection.
+However, the land below is barely hospitable in its current state,<LINE>especially not for such a large group as yours, so I will instruct you to continue west,<LINE>just as I had tried to tell you before, but if you continue went instead of down,<LINE>there will be a gate to take you outside my superstructure's property.
+I only wish that you leave me alone, and take your tribe with you.
+Maybe afterwards you'll come crawling back to me and then I'll finish<LINE>giving you instructions for how to leave this plane behind.
+Now get out, unless you have something important to show me.|20
+SP|gravity|0
+SP|unlocked
+SP|behavior|Idle
+SP|work|1

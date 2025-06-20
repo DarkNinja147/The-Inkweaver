@@ -52,7 +52,7 @@
 		"maul_damage": 1.0,
 		"karma": 4,
 		"karma_cap": 4,
-		"the_mark": false,
+		"the_mark": true,
 		"the_glow": true,
 		"start_room": [
 			"LC_B04"
@@ -124,6 +124,7 @@
 		"expedition_description": "I'm not sure if this would even work, so I have disabled this.<LINE>How did you even select this?",
 		"guide_overseer": 1,
 		"guide_region_priority": [
+			"SB",
 			"OE"
 		],
 		"craft": [
@@ -147,6 +148,7 @@
 			true,
 			true
 		],
+		"reveal_mark_overtime": 2,
 		"can_access_whitetokens": true,
 		"take_spears_from_wall": false
 	}
