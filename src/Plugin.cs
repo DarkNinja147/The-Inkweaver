@@ -28,6 +28,7 @@ namespace Inkweaver
         }
 
 
+
         // Load any resources, such as sprites or sounds
         private void LoadResources(RainWorld rainWorld) { }
 
@@ -60,8 +61,16 @@ namespace Inkweaver
                     {
                         if (newRoom.game.IsStorySession)
                         {
-                            self.myRobot = new AncientBot(new Vector2(0f, 0f), new Color(0.2f, 0f, 1f), self, true);
-                            newRoom.AddObject(self.myRobot);
+                            var inkweaverAncientBot = new AncientBot(new Vector2(0f, 0f), new Color(0.2f, 0f, 1f), self, true);
+                            if (self.myRobot?.Equals(inkweaverAncientBot) == false)
+                            {
+                                self.myRobot = inkweaverAncientBot;
+                            }
+                            if (SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).TryGet<string>("currentlyLoadedRoom", out string loaded) && loaded != newRoom.roomSettings.name)
+                            {
+                                self.room.AddObject(self.myRobot);
+                            }
+                            SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).Set<string>("currentlyLoadedRoom", newRoom.roomSettings.name);
                             if (newRoom.game.GetStorySession.saveState.hasRobo != true)
                             {
                                 newRoom.game.GetStorySession.saveState.hasRobo = true;
