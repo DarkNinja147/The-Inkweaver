@@ -19,7 +19,7 @@ This mod is currently going to stay extremely unfinished, as I don't know how to
 - Create mask item
 - Extra item slots
 - Campaign goal triggers
-- 5P dialogue (LttM is collapsed because it's Arti's spot on the timeline)
+- Fix 5P dialogue, maybe add more (LttM is collapsed because it's Arti's spot on the timeline)
 - Cutscenes? Maybe?
 - Figure out a way to force-save after exiting GATE_UW_LC at the start of campaign so as to avoid the bug with the echo on top of the Wall
 
