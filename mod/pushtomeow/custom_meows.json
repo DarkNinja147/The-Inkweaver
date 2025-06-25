@@ -1,0 +1,11 @@
+{
+	"priority": -1,
+	"custom_meows": [
+		{
+			"slugcat_id": "Inkweaver",
+			"short_meow_soundid": "SlugcatMeowInkShort",
+			"long_meow_soundid": "SlugcatMeowInk",
+            "volume_multiplier": 1
+		}
+	]
+}

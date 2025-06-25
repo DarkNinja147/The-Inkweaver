@@ -7,7 +7,7 @@ using static SlugBase.Features.FeatureTypes;
 
 namespace Inkweaver
 {
-    [BepInPlugin(MOD_ID, "Inkweaver Scug", "0.2.0")]
+    [BepInPlugin(MOD_ID, "Inkweaver Scug", "0.3.0")]
     class Plugin : BaseUnityPlugin
     {
         private const string MOD_ID = "darkninja.inkweaver";
@@ -61,7 +61,7 @@ namespace Inkweaver
                     {
                         if (newRoom.game.IsStorySession)
                         {
-                            var inkweaverAncientBot = new AncientBot(new Vector2(0f, 0f), new Color(0.2f, 0f, 1f), self, true);
+                            var inkweaverAncientBot = new AncientBot(self.mainBodyChunk.pos, new Color(0.2f, 0f, 1f), self, true);
                             self.myRobot = inkweaverAncientBot;
                             if (SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).TryGet<string>("currentlyLoadedRoom", out string loaded) && loaded != newRoom.roomSettings.name)
                             {
@@ -84,6 +84,14 @@ namespace Inkweaver
         private void Inkweaver_ctor(On.Player.orig_ctor orig, Player self, AbstractCreature abstractCreature, World world)
         {
             orig(self, abstractCreature, world);
+            if (IsInkweaver.TryGet(self, out bool isInkweaver) && isInkweaver)
+            {
+
+                if (self.room.game.GetStorySession.saveState.deathPersistentSaveData.ripMoon != true)
+                {
+                    self.room.game.GetStorySession.saveState.deathPersistentSaveData.ripMoon = true;
+                }
+            }
         }
     }
 }

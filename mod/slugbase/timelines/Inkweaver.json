@@ -1,0 +1,5 @@
+{
+    "id": "Inkweaver",
+    "base": "Artificer",
+    "insert_before": "Artificer"
+}

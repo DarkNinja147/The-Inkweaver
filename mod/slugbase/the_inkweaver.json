@@ -60,7 +60,7 @@
 		"start_position": {
 			"LC_B04": [
 				63,
-				22
+				13
 			]
 		},
 		"intro_cutscene": {
@@ -111,15 +111,17 @@
 		"perma_unlock_gates": false,
 		"food_min": 5,
 		"food_max": 8,
-		"select_menu_scene": "slugcat - inkweaver",
+		"title_card": "intro_roll_c_inkweaver",
+		"select_menu_scene": "Slugcat_Inkweaver",
 		"select_menu_scene_ascended": "Ghost_Inkweaver",
 		"sleep_scene": "Sleep_Inkweaver",
-		"starve_scene": "Starve_Inkweaver",
-		"death_scene": "Death_Inkweaver",
+		"outro_slideshow": "Outro_Inkweaver",
 		"world_state": [
-			"InkweaverTimeline",
+			"Inkweaver",
 			"Artificer"
 		],
+		"timeline_before": "Artificer",
+		"timeline_after": "Spear",
 		"expedition_enabled": false,
 		"expedition_description": "I'm not sure if this would even work, so I have disabled this.<LINE>How did you even select this?",
 		"guide_overseer": 1,

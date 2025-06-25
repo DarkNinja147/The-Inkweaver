@@ -1,16 +1,20 @@
 {
 	"id": "Slugcat_Inkweaver",
-	"scene_folder": "scenes/slugcat - inkweaver",
+	"scene_folder": "slugbase/scenes/slugcat - inkweaver",
 	"images": [
-		{ "name": "Background", "pos": [492, 297], "depth": 3.7, "shader": "Basic" },
-		{ "name": "Slugcat",    "pos": [605, 427], "depth": 2.8, "shader": "Basic" },
-		{ "name": "Grass 3",    "pos": [602, 264], "depth": 2.2, "shader": "Basic" },
-		{ "name": "Grass 2",    "pos": [446, 283], "depth": 2.0, "shader": "Basic" },
-		{ "name": "Grass 1",    "pos": [515, 265], "depth": 1.8, "shader": "Basic" }
+		{ "name": "ink_flat", "pos": [0, 0], "depth": -1, "flatmode": true },
+		{ "name": "background1", "pos": [0, 0], "depth": 5, "shader": "Basic" },
+		{ "name": "background2", "pos": [0, 0], "depth": 4.7, "shader": "Basic" },
+		{ "name": "background3", "pos": [0, 0], "depth": 4.1, "shader": "Basic" },
+		{ "name": "background4", "pos": [0, 0], "depth": 3.9, "shader": "Basic" },
+		{ "name": "background5", "pos": [0, 0], "depth": 3.65, "shader": "Basic" },
+		{ "name": "slugcat6", "pos": [0, 0], "depth": 2.9, "shader": "Basic" },
+		{ "name": "pearls7", "pos": [0, 0], "depth": 2.5, "shader": "Basic" },
+		{ "name": "badpaint8", "pos": [0, 5], "depth": 2.0, "shader": "Basic" }
 	],
 	"idle_depths": [ 2.8 ],
 	"glow_pos": [688, 484],
 	"mark_pos": [689, 583],
 	"select_menu_pos": [0, 0],
-	"slugcat_depth": 2.8
+	"slugcat_depth": 2.9
 }
