@@ -1,7 +1,9 @@
 A determined slugcat, raised by scavengers, must find a new home for himself.
+
 Perhaps you know a suitable place?
 
 6.24.2025 Lore has been massively improved, and both endings are completely different.
+
 6.25.2025 ART!!! YAYY
 
 This mod includes a slugcat named Inkweaver, my primary and only slugcat OC. Unique things:
