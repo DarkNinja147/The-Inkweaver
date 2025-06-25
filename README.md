@@ -2,10 +2,6 @@ A determined slugcat, raised by scavengers, must find a new home for himself.
 
 Perhaps you know a suitable place?
 
-6.24.2025 Lore has been massively improved, and both endings are completely different.
-
-6.25.2025 ART!!! YAYY
-
 This mod includes a slugcat named Inkweaver, my primary and only slugcat OC. Unique things:
 - He is supposed to have a mask similar to the Chieftain's mask, but not as grandiose and can be hard-equipped like Moon's cloak (NOT IMPLEMENTED YET)
 - He is supposed to be able to carry two spears on his back and three small one-handed objects on a strap around the base of his tail, you can use the SPECIAL keybind to select which slot to put/retrieve the items from. (NOT IMPLEMENTED YET)
