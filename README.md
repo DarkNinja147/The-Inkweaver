@@ -21,5 +21,3 @@ This mod is currently going to stay extremely unfinished, as I don't know how to
 The work that explains what his lore was meant to be is here: https://archiveofourown.org/works/65963092
 
 I don't understand how people can't just credit their contributors. It's not like you're going to lose any traffic by doing so, they still have to go through your work to see the credits. Anyway. Thank you SO MUCH Urarun/Bush for the art!!
-
-So, turns out Peter can't at all understand how I felt throughout the whole drama and won't accept me groveling once again, so I'll just leave this carrd here to show how I felt going through everything. (I also moved the entire really chunky wall of text into it so as to not bloat this on my mod. You're welcome.) https://darkninja147-drama.carrd.co
