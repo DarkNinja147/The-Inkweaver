@@ -2,6 +2,7 @@
 	"id": "darkninja.inkweaver",
 	"name": "The Inkweaver",
 	"version": "0.3.0",
+	"target_game_version": "v1.10.4",
 	"authors": "DarkNinja (mod creator, character owner, and development leader) - Urarun (artist)",
 	"description": "A determined slugcat, raised by scavengers, must find a new home for himself.",
 	"requirements": [ "slime-cubed.slugbase", "customslugcatutils", "moreslugcats", "magica.extendedslugbasefeatures" ],

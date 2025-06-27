@@ -22,7 +22,6 @@ internal static class Extras
         return (orig, self) =>
         {
             orig(self);
-
             try
             {
                 if (!_initialized)

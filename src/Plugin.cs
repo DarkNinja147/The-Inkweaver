@@ -7,11 +7,9 @@ using static SlugBase.Features.FeatureTypes;
 
 namespace Inkweaver
 {
-    [BepInPlugin(MOD_ID, "Inkweaver Scug", "0.3.0")]
+    [BepInPlugin("darkninja.inkweaver", "Inkweaver Scug", "0.3.0")]
     class Plugin : BaseUnityPlugin
     {
-        private const string MOD_ID = "darkninja.inkweaver";
-
         public static readonly PlayerFeature<bool> NewRoom_save = PlayerBool("inkweaver/NewRoom_save");
         public static readonly PlayerFeature<bool> NewRoom_robo = PlayerBool("inkweaver/NewRoom_robo");
         public static readonly PlayerFeature<bool> ctor = PlayerBool("inkweaver/ctor");
