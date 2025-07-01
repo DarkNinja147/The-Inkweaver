@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using MoreSlugcats;
+using RWCustom;
 using SlugBase.Features;
 using System;
 using UnityEngine;
@@ -15,22 +16,16 @@ namespace Inkweaver
         public static readonly PlayerFeature<bool> ctor = PlayerBool("inkweaver/ctor");
         public static readonly PlayerFeature<bool> IsInkweaver = PlayerBool("inkweaver/is_inkweaver");
 
-        // Add hooks
         public void OnEnable()
         {
             On.RainWorld.OnModsInit += Extras.WrapInit(LoadResources);
 
-            // Put your custom hooks here!
             On.Player.ctor += Inkweaver_ctor;
             On.Player.NewRoom += Inkweaver_NewRoom;
         }
 
-
-
-        // Load any resources, such as sprites or sounds
         private void LoadResources(RainWorld rainWorld) { }
 
-        // Implement IsInkweaver
         private void Inkweaver_NewRoom(On.Player.orig_NewRoom orig, Player self, Room newRoom)
         {
             orig(self, newRoom);
@@ -45,7 +40,7 @@ namespace Inkweaver
                         if (!SlugBase.SaveData.SaveDataExtension.GetSlugBaseData(newRoom.game.GetStorySession.saveState.deathPersistentSaveData).TryGet<bool>("hasSavedOnWall", out bool saved) || saved == false)
                         {
                             //Logger.Log(BepInEx.Logging.LogLevel.Info, "Attempting to load the next statement.");
-                            if (newRoom.roomSettings.name.ToUpper() == "UW_A12")
+                            if (String.Equals(newRoom.roomSettings.name, "UW_A12", StringComparison.OrdinalIgnoreCase))
                             {
                                 Logger.Log(BepInEx.Logging.LogLevel.Info, "Reached save point.");
                                 Logger.Log(BepInEx.Logging.LogLevel.Info, newRoom.game.GetStorySession.saveState.deathPersistentSaveData.SaveToString(false, false));
@@ -91,5 +86,23 @@ namespace Inkweaver
                 }
             }
         }
+        private static void SpawnArti(RainWorldGame game, WorldCoordinate pos) {
+            AbstractCreature abstractCreature = new(game.world, StaticWorld.GetCreatureTemplate(CreatureTemplate.Type.Slugcat), null, pos, game.GetNewID());
+            abstractCreature.state = new PlayerState(abstractCreature, 0, MoreSlugcatsEnums.SlugcatStatsName.Artificer, false);
+            IntVector2 foodNeeded = SlugcatStats.SlugcatFoodMeter(MoreSlugcatsEnums.SlugcatStatsName.Artificer);
+            Player pl2 = new(abstractCreature, game.world)
+            {
+                SlugCatClass = MoreSlugcatsEnums.SlugcatStatsName.Artificer
+            };
+            pl2.slugcatStats.name = MoreSlugcatsEnums.SlugcatStatsName.Artificer;
+            pl2.playerState.slugcatCharacter = MoreSlugcatsEnums.SlugcatStatsName.Artificer;
+            pl2.setPupStatus(false);
+            pl2.playerState.forceFullGrown = true;
+            pl2.slugcatStats.maxFood = foodNeeded.x;
+            pl2.slugcatStats.foodToHibernate = foodNeeded.y;
+            pl2.playerState.foodInStomach = pl2.slugcatStats.maxFood;
+            //pl2.input = new Player.InputPackage[10];
+        }
+        public static SlugcatStats.Name SlugName = new("Inkweaver", false);
     }
 }
