@@ -1,0 +1,89 @@
+{
+    "id": "Outro_Inkweaver_B",
+    "slideshow_folder": "slugbase/slideshows/outro inkweaver b",
+    "next_process": "Statistics",
+    "music": {
+        "name": "RW_Outro_Theme_B",
+        "fade_in": 10
+    },
+    "scenes": [
+        {
+            "name": "outro 1_b - clearing",
+            "scene_folder": "slugbase/slideshows/outro inkweaver b/outro 1_b - clearing",
+            "fade_in_start": 1.2,
+            "fade_in_end": 4,
+            "fade_out_start": 16.2,
+            "images": [
+                { "name": "outro 1_b - clearing - flat", "pos": [ 0, 0 ], "depth": -1, "flatmode": true },
+                { "name": "outro 1_b - clearing - 3", "pos": [ -26, -4 ], "depth": 10, "shader": "LightEdges" },
+                { "name": "outro 1_b - clearing - 2", "pos": [ -39, -52 ], "depth": 4.5, "shader": "Basic" },
+                { "name": "outro 1_b - clearing - 1", "pos": [ -32, -94 ], "depth": 1.9, "shader": "LightEdges" },
+                { "name": "outro 1_b - clearing - 0", "pos": [ 0, -115 ], "depth": 1.5, "shader": "Basic" }
+            ],
+            "camera_path": [ [ 3, -574, 0.2864583 ], [ 3, -474, 0.3264583 ], [ 0, -250, 0.546875 ], [ 0, -150, 0.546875 ], [ 0, -150, 0.546875 ] ]
+        },
+        {
+            "name":"outro 2_b - peek",
+            "scene_folder":"slugbase/slideshows/outro inkweaver b/outro 2_b - peek",
+            "fade_in_start": 18.21,
+            "fade_in_end": 19.1,
+            "fade_out_start": 25.02,
+            "images": [
+                { "name": "outro 2_b - peek - flat", "pos": [ 0, 0 ], "depth": -1, "flatmode": true },
+                { "name": "outro 2_b - peek - 3", "pos": [ -168, -50 ], "depth": 12, "shader": "LightEdges" },
+                { "name": "outro 2_b - peek - 2", "pos": [ 0, 0 ], "depth": 10, "shader": "Basic" },
+                { "name": "outro 2_b - peek - 1", "pos": [ -28, -5 ], "depth": 6.5, "shader": "Basic" },
+                { "name": "outro 2_b - peek - 0", "pos": [ 178, -56 ], "depth": 3.2, "shader": "LightEdges" }
+            ],
+            "camera_path": [ [ -928, 505, 0.4166667 ], [ -568, 270, 0.5566667 ], [ 0, 0, 0.9765625 ], [ 423, -300, 0.9765625 ], [ 723, -490, 0.9765625 ] ]
+        },
+        {
+            "name":"outro 3_b - return",
+            "scene_folder":"slugbase/slideshows/outro inkweaver b/outro 3_b - return",
+            "fade_in_start": 28.21,
+            "fade_in_end": 29.01,
+            "fade_out_start": 37.02,
+            "images": [
+                { "name": "outro 3_b - return - flat", "pos": [ 0, 0 ], "depth": -1, "flatmode": true },
+                { "name": "outro 3_b - return - 3", "pos": [ -111, 8 ], "depth": 12, "shader": "LightEdges" },
+                { "name": "outro 3_b - return - 2", "pos": [ 252, 52], "depth": 10, "shader": "LightEdges" },
+                { "name": "outro 3_b - return - 1", "pos": [ 0, -29 ], "depth": 6.5, "shader": "Basic" },
+                { "name": "outro 3_b - return - 0", "pos": [ 0, -46 ], "depth": 3.2, "shader": "Basic" }
+            ],
+            "camera_path": [ [ 101, -109, 0.2864583 ], [ 5, -90, 0.3264583 ], [ -196, -7, 0.4064583 ], [ -392, 148, 0.4564583 ], [ -477, 224, 0.5064583 ], [ -534, 280, 0.5078125 ] ]
+        },
+        {
+            "name":"outro 4_b - home",
+            "scene_folder":"slugbase/slideshows/outro inkweaver b/outro 4_b - home",
+            "fade_in_start": 40.21,
+            "fade_in_end": 41.1,
+            "fade_out_start": 50,
+            "images": [
+                { "name": "outro 4_b - home - flat", "pos": [ 0, 0 ], "depth": -1, "flatmode": true },
+                { "name": "outro 4_b - home - 10", "pos": [ -67, -36 ], "depth": 10, "shader": "LightEdges" },
+                { "name": "outro 4_b - home - 9", "pos": [ -55, -58 ], "depth": 6.2, "shader": "LightEdges" },
+                { "name": "outro 4_b - home - 8", "pos": [ -54, -37 ], "depth": 4.8, "shader": "LightEdges" },
+                { "name": "outro 4_b - home - 7", "pos": [ -49, -28 ], "depth": 3.8, "shader": "LightEdges" },
+                { "name": "outro 4_b - home - 6", "pos": [ -118, -43 ], "depth": 3.2, "shader": "LightEdges" },
+                { "name": "outro 4_b - home - 5", "pos": [ 577, -36 ], "depth": 3.2, "shader": "Multiply" },
+                { "name": "outro 4_b - home - 4", "pos": [ 0, 0 ], "depth": 3.2, "shader": "Basic" },
+                { "name": "outro 4_b - home - 3", "pos": [ 262, -38 ], "depth": 2.4, "shader": "LightEdges" },
+                { "name": "outro 4_b - home - 2", "pos": [ 351, 386 ], "depth": 2.4, "shader": "LightEdges" },
+                { "name": "outro 4_b - home - 1", "pos": [ -44, -67 ], "depth": 1.8, "shader": "LightEdges" },
+                { "name": "outro 4_b - home - 0", "pos": [ 200, -55 ], "depth": 1.5, "shader": "Basic" }
+            ],
+            "camera_path": [ [ 196, 120, 0.390625 ], [ 137, -31, 0.330625 ], [ 60, -92, 0.290625 ], [ -38, -120, 0.260625 ], [ -64, -120, 0.234375 ] ]
+        },
+        {
+            "name":"outro 4_b - empty",
+            "scene_folder":"slugbase/scenes/empty",
+            "fade_in_start": 53,
+            "fade_in_end": 53,
+            "fade_out_start": 57,
+            "images": [
+                { "name": "empty", "pos": [ 0, 0 ], "depth": -1, "flatmode": true },
+                { "name": "empty", "pos": [ 0, 0 ], "depth": 0, "shader": "Basic" }
+            ]
+        }
+    ]
+}

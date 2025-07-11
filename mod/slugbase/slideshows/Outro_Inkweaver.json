@@ -1,6 +1,6 @@
 {
   "id": "Outro_Inkweaver",
-  "slideshow_folder": "slugbase/slideshows/outro inkweaver test",
+  "slideshow_folder": "slugbase/slideshows/outro inkweaver",
   "next_process": "Statistics",
   "music": {
     "name": "RW_Outro_Theme",
@@ -62,6 +62,17 @@
         { "name": "1 - facebloom", "pos": [ 5, -110 ], "depth": 1.9, "shader": "Overlay" }
       ],
       "camera_path": [ [ -634, -309, 0 ], [ -413, -226, -1 ], [ -224, -173, 0.2213542 ], [ -13, -137, -1 ], [ 202, -139, 0.234375 ], [ 346, -149, -1 ], [ 509, -219, 0.5859375 ] ]
-    }
+    },
+      {
+        "name":"outro 3 - empty",
+        "scene_folder":"slugbase/scenes/empty",
+        "fade_in_start": 61,
+        "fade_in_end": 61,
+        "fade_out_start": 66,
+        "images": [
+          { "name": "empty", "pos": [ 0, 0 ], "depth": -1, "flatmode": true },
+          { "name": "empty", "pos": [ 0, 0 ], "depth": 0, "shader": "Basic" }
+        ]
+      }
   ]
 }

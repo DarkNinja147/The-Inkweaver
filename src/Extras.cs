@@ -1,4 +1,5 @@
-using System;
+using System.Runtime.CompilerServices;
+using System.Security;
 using System.Security.Permissions;
 
 /*
@@ -6,10 +7,11 @@ using System.Security.Permissions;
  * Unless you know what you're doing, you shouldn't modify anything here.
  */
 
-// Allows access to private members
-#pragma warning disable CS0618
+#pragma warning disable CS0618 // Type or member is obsolete
+[assembly: IgnoresAccessChecksTo("Assembly-CSharp")]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
-#pragma warning restore CS0618
+[module: UnverifiableCode]
+#pragma warning restore CS0618 // Type or member is obsolete
 
 
 internal static class Extras

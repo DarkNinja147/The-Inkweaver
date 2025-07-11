@@ -7,6 +7,6 @@
 	"description": "A determined slugcat, raised by scavengers, must find a new home for himself.",
 	"requirements": [ "slime-cubed.slugbase", "customslugcatutils", "moreslugcats", "magica.extendedslugbasefeatures" ],
 	"requirements_names": [ "SlugBase", "Custom Slugcat Utils", "More Slugcats Expansion", "Extended Slugbase Features" ],
-	"priorities": ["watcher"],
+	"priorities": [ "watcher", "pushtomeow" ],
 	"tags": [ "Custom Slugcat", "Campaigns", "Cosmetics" ]
 }
